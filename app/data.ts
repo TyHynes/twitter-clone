@@ -33,17 +33,17 @@ export interface UserProfile {
 }
 
 export const USER_PROFILE: UserProfile = {
-  name: "Chomper User",
+  name: "Chomper",
   handle: "@chomper_official",
   verified: true,
-  bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. #ChomperApp",
+  bio: "Offical Profile of Chomper, The Mascot of Chomper App. #ChomperApp",
   location: "Internet, World",
   website: "chomper.app",
   born: "1990",
   joined: "March 2026",
   following: 1234,
   followers: "10.5K",
-  avatar: "https://via.placeholder.com/100",
+  avatar: "twitter-clone/assets/UserImages/Profile.png",
   banner: "https://via.placeholder.com/600x200",
 };
 
@@ -52,9 +52,9 @@ export const TWEETS: Tweet[] = [
     id: "1",
     pinned: true,
     user: {
-      name: "Chomper User",
+      name: "Chomper",
       handle: "@chomper_official",
-      avatar: "https://via.placeholder.com/100",
+      avatar: "twitter-clone/assets/UserImages/Profile.png",
     },
     content: "Pinned Tweet: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco. \n\n#LoremIpsum",
     timestamp: "28 May 26",
