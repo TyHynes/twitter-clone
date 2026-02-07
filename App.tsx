@@ -24,7 +24,10 @@ export default function App() {
           </View>
         )}
         <View style={styles.tweetUserRow}>
-          <Image source={{ uri: item.user.avatar }} style={styles.tweetAvatar} />
+          <Image
+            source={typeof item.user.avatar === 'string' ? { uri: item.user.avatar } : item.user.avatar}
+            style={styles.tweetAvatar}
+          />
           <View style={styles.tweetContentColumn}>
             <View style={styles.tweetUserInfo}>
               <Text style={styles.tweetName}>{item.user.name}</Text>
@@ -91,7 +94,10 @@ export default function App() {
               {/* Profile Info */}
               <View style={styles.profileContainer}>
                 <View style={styles.profileImageContainer}>
-                  <Image source={{ uri: USER_PROFILE.avatar }} style={styles.profileImage} />
+                  <Image
+                    source={typeof USER_PROFILE.avatar === 'string' ? { uri: USER_PROFILE.avatar } : USER_PROFILE.avatar}
+                    style={styles.profileImage}
+                  />
                   <TouchableOpacity style={styles.followButton}>
                     <Text style={styles.followButtonText}>Follow</Text>
                   </TouchableOpacity>

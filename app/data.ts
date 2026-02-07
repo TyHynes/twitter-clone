@@ -28,7 +28,7 @@ export interface UserProfile {
   joined: string;
   following: number;
   followers: string;
-  avatar: string;
+  avatar: any; // Changed to any to support require()
   banner: string;
 }
 
@@ -43,7 +43,7 @@ export const USER_PROFILE: UserProfile = {
   joined: "March 2026",
   following: 1234,
   followers: "10.5K",
-  avatar: "twitter-clone/assets/UserImages/Profile.png",
+  avatar: require("../assets/UserImages/Profile.png"), // Correct local asset usage
   banner: "https://via.placeholder.com/600x200",
 };
 
@@ -54,7 +54,7 @@ export const TWEETS: Tweet[] = [
     user: {
       name: "Chomper",
       handle: "@chomper_official",
-      avatar: "twitter-clone/assets/UserImages/Profile.png",
+      avatar: require("../assets/UserImages/Profile.png"), // Correct local asset usage
     },
     content: "Pinned Tweet: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco. \n\n#LoremIpsum",
     timestamp: "28 May 26",
