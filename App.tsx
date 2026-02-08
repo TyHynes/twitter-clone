@@ -15,6 +15,15 @@ import { Ionicons } from "@expo/vector-icons";
 import { USER_PROFILE, TWEETS, Tweet } from "./app/data";
 
 export default function App() {
+  const renderTweetText = (text: string) => {
+    return text.split(/\s+/).map((word,index) => {
+      const isHashtag = word.startsWith("#");
+
+      return(
+        <Text key={index} style={isHashtag ? styles.hashtag : styles.tweetText}>{word + " "}</Text>
+      );
+    });
+  }
   const renderItem = ({ item }: { item: Tweet }) => (
     <View style={styles.tweetContainer}>
       <View style={styles.tweetHeader}>
@@ -37,7 +46,9 @@ export default function App() {
               )}
               <Text style={styles.tweetHandle}>{item.user.handle} · {item.timestamp}</Text>
             </View>
-            <Text style={styles.tweetText}>{item.content}</Text>
+            <Text style={styles.tweetText}>
+              {renderTweetText(item.content)}
+            </Text>
             {item.image && (
               <Image
                 source={typeof item.image === "string" ? { uri: item.image } : item.image}
@@ -430,4 +441,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
   },
+  hashtag: {
+    color: "#1D9BF0"
+  }
 });
