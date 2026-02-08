@@ -8,6 +8,7 @@ import {
   StatusBar,
   TouchableOpacity,
   FlatList,
+  Alert,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -37,6 +38,12 @@ export default function App() {
               <Text style={styles.tweetHandle}>{item.user.handle} · {item.timestamp}</Text>
             </View>
             <Text style={styles.tweetText}>{item.content}</Text>
+            {item.image && (
+              <Image
+                source={typeof item.image === "string" ? { uri: item.image } : item.image}
+                style={styles.imagePost}
+              />
+            )}
             <View style={styles.tweetMetrics}>
               <View style={styles.metricItem}>
                 <Ionicons name="chatbubble-outline" size={16} color="#687684" />
@@ -163,6 +170,15 @@ export default function App() {
             </View>
           )}
         />
+
+        {/* Add Post  */}
+        <TouchableOpacity
+          style={styles.postButton}
+          activeOpacity={0.8}
+          onPress={() => Alert.alert("New Post! (Alert Button Pressed)")}
+        >
+          <Ionicons name="add" size={30} color="white" />
+        </TouchableOpacity>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -394,5 +410,24 @@ const styles = StyleSheet.create({
     color: "#687684",
     fontSize: 12,
     marginLeft: 4,
+  },
+  postButton: {
+    position: "absolute",
+    right: 20,
+    bottom: 30,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "#1D9BF0",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 10, 
+  },
+  imagePost: {
+    width: "100%",
+    height: 200,
+    borderRadius: 12,
+    marginTop: 10,
+    marginBottom: 10,
   },
 });

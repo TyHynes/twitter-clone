@@ -113,4 +113,21 @@ export const TWEETS: Tweet[] = [
       views: 3100,
     },
   },
+  {
+    id: "5",
+    user: {
+      name: "Chomper User",
+      handle: "@chomper_official",
+      avatar: require("../assets/UserImages/Profile.png"),
+    },
+    content: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+    image: require("../assets/UserImages/Sapphire.png"),
+    timestamp: "2d",
+    metrics: {
+      replies: 27,
+      reposts: 73,
+      likes: 1298,
+      views: 5000,
+    },
+  },
 ];
