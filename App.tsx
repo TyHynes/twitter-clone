@@ -16,10 +16,10 @@ import { USER_PROFILE, TWEETS, Tweet } from "./app/data";
 
 export default function App() {
   const renderTweetText = (text: string) => {
-    return text.split(/\s+/).map((word,index) => {
+    return text.split(/\s+/).map((word, index) => {
       const isHashtag = word.startsWith("#");
 
-      return(
+      return (
         <Text key={index} style={isHashtag ? styles.hashtag : styles.tweetText}>{word + " "}</Text>
       );
     });
@@ -432,7 +432,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#1D9BF0",
     alignItems: "center",
     justifyContent: "center",
-    zIndex: 10, 
+    zIndex: 10,
   },
   imagePost: {
     width: "100%",

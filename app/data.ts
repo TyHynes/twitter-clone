@@ -68,7 +68,7 @@ export const TWEETS: Tweet[] = [
   {
     id: "2",
     user: {
-      name: "Chomper User",
+      name: "Chomper",
       handle: "@chomper_official",
       avatar: require("../assets/UserImages/Profile.png"),
     },
@@ -81,11 +81,11 @@ export const TWEETS: Tweet[] = [
       views: 450,
     },
   },
-  
+
   {
     id: "4",
     user: {
-      name: "Chomper User",
+      name: "Chomper",
       handle: "@chomper_official",
       avatar: require("../assets/UserImages/Profile.png"),
     },
@@ -101,7 +101,7 @@ export const TWEETS: Tweet[] = [
   {
     id: "5",
     user: {
-      name: "Chomper User",
+      name: "Chomper",
       handle: "@chomper_official",
       avatar: require("../assets/UserImages/Profile.png"),
     },
